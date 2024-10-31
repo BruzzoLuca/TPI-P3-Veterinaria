@@ -12,7 +12,6 @@ namespace Domain.ViewModels
         public string Name { get; set; }
         public string Email { get; set; }
         public int Matricula { get; set; }
-
         public string Password { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.Dto;
+using Domain.Entities;
 using Domain.IRepository;
 using Domain.ViewModels;
 using Infra.Data;
@@ -13,62 +14,101 @@ namespace Domain.Repository
             _context = context;
         }
 
-        public Veterinario? GetVeteById(int id)
+        public VeterinarioDto? GetVeteById(int id)
         {
-            return _context.Veterinarios.FirstOrDefault(u => u.Id == id);
+            return _context.Veterinarios.Select(v => new VeterinarioDto
+            {
+                Id = v.Id,
+                Name = v.Name,
+                Email = v.Email,
+                Matricula = v.Matricula,
+                Activo = v.Activo
+
+            }).FirstOrDefault();
         }
 
-        public List<Veterinario> GetAllVete()
+        public List<VeterinarioDto> GetAllVete()
         {
-            return _context.Veterinarios.ToList();
+            return _context.Veterinarios.Select(v => new VeterinarioDto
+            {
+                Id = v.Id,
+                Name = v.Name,
+                Email = v.Email,
+                Matricula = v.Matricula,
+                Activo = v.Activo,
+
+            }).ToList();
         }
 
-        public bool AddVete(VeterinarioViewModel veterinario)
+        public (bool, string) AddVete(VeterinarioViewModel veterinario)
         {
-            
+
             var vete = _context.Veterinarios.FirstOrDefault(p => p.Id == veterinario.Id);
 
             if (vete != null)
             {
-                return false;
+
+                return (false, "Id existente");
+            }
+            // Verifica si ya existe un veterinario con la misma Matricula
+            if (_context.Veterinarios.Any(p => p.Matricula == veterinario.Matricula))
+            {
+                return (false, "Matricula existente");
             }
             _context.Veterinarios.Add(new Veterinario
             {
-                Id = vete.Id,
+                Id = veterinario.Id,
                 Name = veterinario.Name,
-                Matricula   = veterinario.Matricula,
+                Matricula = veterinario.Matricula,
                 Email = veterinario.Email,
-                Password = veterinario.Password,   
+                Password = veterinario.Password,
+                Activo = true,
             });
+            _context.SaveChanges();
+            return (true, null);
+        }
+
+
+        public bool DeleteVeterinario(int id)
+        {
+            var user = _context.Veterinarios.FirstOrDefault(x => x.Id == id && x.Activo);
+            if (user == null)
+            {
+                return false;
+            }
+            user.Activo = false;
             _context.SaveChanges();
             return true;
         }
 
-        public bool DeleteVeterinario(int id)
-        {
-            var user = _context.Veterinarios.FirstOrDefault(x => x.Id == id);
-            if (user != null)
-            {
-                return true;
-            }
-            _context.SaveChanges();
-            return false;
-        }
-
-        public bool UpdateVete(Veterinario userVeterinario)
+        public bool UpdateVete(VeterinarioViewModel userVeterinario)
         {
             var u = _context.Veterinarios.FirstOrDefault(x => x.Id == userVeterinario.Id);
-            if (u != null)
+            if (u == null)
             {
-                return true;
+                return false;
             }
 
             u.Name = userVeterinario.Name;
             u.Email = userVeterinario.Email;
             u.Password = userVeterinario.Password;
+            u.Matricula = userVeterinario.Matricula;
 
             _context.SaveChanges();
-            return false;
+            return true;
+        }
+
+        public bool ReActivarVete(int id) 
+        {
+            var user = _context.Veterinarios.FirstOrDefault(x => x.Id == id && x.Activo == false);
+            if (user == null)
+            {
+                return false;
+            }
+            user.Activo = true;
+            _context.SaveChanges();
+            return true;
+
         }
 
     }

@@ -1,5 +1,5 @@
 ﻿using Application.Interfaces;
-using Application.Models;
+using Domain.Dto;
 using Domain.Entities;
 using Domain.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -48,11 +48,11 @@ namespace TPI_Prod_Veterinaria.Controllers
         [HttpPost("Create")]
         public IActionResult AddVete([FromBody] VeterinarioViewModel veterinario)
         {
-            var created = _veteServices.AddVete(veterinario);
+            var (created, errorMessage) = _veteServices.AddVete(veterinario);
 
             if (!created)
             {
-                return BadRequest("Id existente");
+                return BadRequest(errorMessage);
             }
 
             string baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
@@ -62,8 +62,9 @@ namespace TPI_Prod_Veterinaria.Controllers
             return Created(locationUrl, veterinario);
         }
 
+
         [HttpPut("Update")]
-        public IActionResult Update([FromBody] Veterinario veterinario)
+        public IActionResult Update([FromBody] VeterinarioViewModel veterinario)
         {
             var updated = _veteServices.UpdateVete(veterinario);
 
@@ -72,7 +73,7 @@ namespace TPI_Prod_Veterinaria.Controllers
                 return NotFound("No se encontro el recurso en la base de datos");
             }
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("Delete/{id}")]
@@ -86,6 +87,19 @@ namespace TPI_Prod_Veterinaria.Controllers
             }
 
             return NoContent();
+        }
+
+        [HttpPut("ReActivar/{id}")]
+        public IActionResult ReActivarVete([FromRoute] int id) 
+        {
+            var reactive = _veteServices.ReActivarVete(id);
+
+            if (!reactive)
+            {
+                return NotFound("No se encontro el recurso en la base de datos");
+            }
+
+            return Ok();
         }
     }
 }
