@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Domain.Enum;
+
 
 namespace Domain.Entities
 {
@@ -13,7 +13,8 @@ namespace Domain.Entities
         public string Name { get; set; } 
         public string Email { get; set; } 
         public string Password { get; set; }
-        public bool Activo { get; set; } 
+        public bool Activo { get; set; } = true;
+
     }
 
 }
