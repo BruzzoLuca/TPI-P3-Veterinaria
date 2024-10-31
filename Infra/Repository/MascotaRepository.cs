@@ -26,25 +26,27 @@ namespace Infra.Repository
             return mascota;
         }
 
-        public void Delete(Mascota mascota)
-        {
-            _context.Remove(mascota);
-            _context.SaveChanges();
-        }
-
         public List<Mascota> GetAll() 
         {
-            return _context.Mascotas.Include(a => a.Cliente).Include(a => a.Diagnosticos).ToList();
+            return _context.Mascotas.Include(a => a.Cliente)
+                //.Include(a => a.Diagnosticos)
+                .ToList();
         }
 
         public Mascota? GetById(int id) 
         {
-            return _context.Mascotas.FirstOrDefault(x => x.Id == id);
+            return _context.Mascotas.Include(a => a.Cliente).FirstOrDefault(x => x.Id == id);
         }
 
         public void Update(Mascota mascota)
         {
             _context.Update(mascota);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Mascota mascota) 
+        {
+            _context.Remove(mascota);
             _context.SaveChanges();
         }
 
