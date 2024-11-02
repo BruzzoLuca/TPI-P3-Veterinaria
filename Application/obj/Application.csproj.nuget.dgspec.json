@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Application\\Application.csproj": {}
+    "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Application\\Application.csproj": {}
   },
   "projects": {
-    "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Application\\Application.csproj": {
+    "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\sofia\\.nuget\\packages\\",
-        "outputPath": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Application\\obj\\",
+        "projectPath": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\54336\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sofia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\54336\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Domain\\Domain.csproj"
+              "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Domain\\Domain.csproj"
               }
             }
           }
@@ -69,17 +69,17 @@
         }
       }
     },
-    "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Domain\\Domain.csproj": {
+    "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\sofia\\.nuget\\packages\\",
-        "outputPath": "E:\\Cosas de Sofi\\Prog3 2024\\TPI_Prod_Veterinaria\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\54336\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\54336\\Desktop\\Facu UTN\\3-Cuatrimestre\\Prog 3 - .net C#\\TPI prog3\\TPI-P3-Veterinaria\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sofia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\54336\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
